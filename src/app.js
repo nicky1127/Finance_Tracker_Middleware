@@ -7,6 +7,9 @@ const cors = require('cors');
 const createError = require('http-errors');
 
 const pgClient = require('./configuration/pgClient');
+
+const systemLogger = require('./configuration/systemLogger');
+
 const recordRouter = require('./routes/recordRouter');
 
 const app = express();
