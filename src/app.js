@@ -56,7 +56,7 @@ app.use((err, req, res, next) => {
 log('process.env.NODE_ENV: ', process.env.NODE_ENV);
 
 const setUpClients = async () => {
-  // await pgClient.init();
+  await pgClient.init();
   server = app.listen(port, () => log(`${name} listening on port ${port}`));
 };
 
