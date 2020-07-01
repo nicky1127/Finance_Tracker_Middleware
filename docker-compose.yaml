@@ -7,6 +7,9 @@ services:
     environment:
     #   DATABASE_URL: postgres://a9503664:null@postgres:5432/finance_tracker
       PORT: 3010
+    container_name: backend
+    networks:
+     - default
     ports:
       - "3010:3010"
     command: npm run start-dev
@@ -17,8 +20,14 @@ services:
   postgres:
     image: postgres:10.4
     ports:
-      - "35432:5432"
+      - "5432:5432"
+    networks:
+      - default
     environment:
       POSTGRES_USER: a9503664
-      POSTGRES_PASSWORD: null
+      POSTGRES_PASSWORD: password
       POSTGRES_DB: finance_tracker
+networks:
+  default:
+    external:
+      name: client_default

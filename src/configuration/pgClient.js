@@ -3,13 +3,14 @@ const { Pool } = require('pg');
 let pool;
 
 const init = async () => {
-  const { PGUSER, PGHOST, PGDATABASE, PGPORT } = process.env;
-  console.log('PGUSER',PGUSER,PGHOST,PGDATABASE,PGPORT)
+  const { PGUSER, PGHOST, PGDATABASE, PGPORT, PGPASSWORD } = process.env;
+  console.log('PGUSER', PGUSER, PGHOST, PGDATABASE, PGPORT, PGPASSWORD);
   console.log('Creating pg connection pool');
   pool = new Pool({
     user: PGUSER,
     host: PGHOST,
     database: PGDATABASE,
+    password: PGPASSWORD,
     port: PGPORT
   });
   console.log('Pool created');
