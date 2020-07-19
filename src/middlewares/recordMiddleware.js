@@ -45,7 +45,7 @@ const recordCreate = async (req, res, next) => {
       record.title,
       record.date,
       record.price,
-      record.isPaid,
+      record.paid,
       record.payer
     ])
     .catch(err => {
@@ -71,7 +71,7 @@ const recordUpdate = async (req, res, next) => {
       record.title,
       record.date,
       record.price,
-      record.isPaid,
+      record.paid,
       record.payer,
       recordId
     ])
